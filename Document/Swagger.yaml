@@ -1,0 +1,67 @@
+openapi: 3.0.1
+info:
+  title: payment-service-dev-api
+  description: API Gateway for payment-service-dev-api
+  version: "1.0.0"
+
+servers:
+  - url: https://{apiId}.execute-api.{region}.amazonaws.com/dev
+    variables:
+      apiId:
+        default: YOUR_API_ID
+      region:
+        default: us-east-1
+
+paths:
+  /webhook/razorpay:
+    post:
+      summary: Razorpay webhook endpoint
+      description: Receives Razorpay payment webhook events
+      operationId: postWebhookRazorpay
+      responses:
+        "200":
+          description: Webhook processed successfully
+        "400":
+          description: Invalid webhook payload
+        "500":
+          description: Internal server error
+      x-amazon-apigateway-integration:
+        uri: ${lambda_function_invoke_arn}
+        httpMethod: POST
+        type: aws_proxy
+        payloadFormatVersion: "2.0"
+
+  /docs:
+    get:
+      summary: Swagger UI documentation
+      description: Serves API documentation UI
+      operationId: getDocs
+      responses:
+        "200":
+          description: Swagger documentation page
+      x-amazon-apigateway-integration:
+        uri: ${lambda_function_invoke_arn}
+        httpMethod: POST
+        type: aws_proxy
+        payloadFormatVersion: "2.0"
+
+  /openapi.json:
+    get:
+      summary: OpenAPI specification JSON
+      description: Returns OpenAPI 3.0 specification
+      operationId: getOpenApiSpec
+      responses:
+        "200":
+          description: OpenAPI JSON document
+      x-amazon-apigateway-integration:
+        uri: ${lambda_function_invoke_arn}
+        httpMethod: POST
+        type: aws_proxy
+        payloadFormatVersion: "2.0"
+
+components:
+  schemas:
+    Empty:
+      type: object
+
+x-amazon-apigateway-importexport-version: "1.0"

@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Tech E-Commerce Platform </title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #374151;
+        }
+
+        .section-heading {
+            border-bottom: 2px solid #6b7280;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2.5rem;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .modal-content,
+        #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- Header/Navigation Bar -->
+    <header
+        class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg py-4 px-6 md:px-12 sticky top-0 z-50 rounded-b-lg">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <h1 class="text-3xl font-bold mb-2 md:mb-0">Dhruvi Mandaviya</h1>
+            <nav>
+                <ul class="flex space-x-4 md:space-x-8 text-lg">
+                    <li><a href="#about-me" class="hover:text-blue-200 transition-colors duration-300">About Me</a></li>
+                    <li><a href="#project-tabs" class="hover:text-blue-200 transition-colors duration-300">Project</a>
+                    </li>
+                    <li><a href="#experience" class="hover:text-blue-200 transition-colors duration-300">Experience</a>
+                    </li>
+                    <li><a href="#contact" class="hover:text-blue-200 transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page content adjustment -->
+    <div class="ml-16 group-hover:ml-56 transition-all duration-300">
+        <!-- page content -->
+    </div>
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <!-- About Me -->
+        <section id="about-me" class="bg-white p-6 md:p-10 rounded-lg shadow-md mb-8 md:mb-12 scroll-mt-24">
+            <h2 class="text-3xl font-semibold mb-6 section-heading text-blue-700">About Me</h2>
+
+            <p class="text-lg leading-relaxed mb-4 text-gray-800">
+                I am an AWS Serverless Developer specializing in building scalable, event-driven backend systems using
+                different AWS services. My expertise lies in designing
+                distributed architectures, integrating complex workflows, and developing reliable microservices
+                that support high-volume applications.I also hold an AWS Certified Cloud Practitioner certification,
+                which provides me with a strong understanding of core AWS services, cloud architecture
+                fundamentals, and best practices for building secure, cost-efficient, and scalable applications.
+            </p>
+
+            <p class="text-lg leading-relaxed mb-4 text-gray-800">
+                I have hands-on experience developing production-grade features such as multi-step order processing,
+                intelligent payment routing, real-time WebSocket updates, and secure API-driven systems. My work focuses
+                heavily on system reliability, observability, and cost-efficient, serverless-first design principles.
+            </p>
+
+            <p class="text-lg leading-relaxed text-gray-800">
+                With a background in mobile development, I bring a strong understanding of client–server communication
+                and end-to-end product thinking. Today, I focus primarily on AWS backend engineering, solving complex
+                workflow,
+                orchestration, and payment challenges through clean architecture and cloud-native design.
+            </p>
+        </section>
+
+
+
+        <!-- Project -->
+        <!-- Project Tabs -->
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+        <section id="project-tabs" class="bg-white p-6 md:p-10 rounded-lg shadow-md mb-8 md:mb-12 scroll-mt-24"
+            x-data="{ activeTab: 'overview' }">
+            <h2 class="text-3xl font-semibold mb-6 section-heading text-blue-700">Project - Agri-Tech E-Commerce
+                Platform</h2>
+            <!-- Tabs -->
+            <div class="flex overflow-x-auto border-b border-gray-200 mb-6">
+                <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
+                    :class="activeTab === 'overview' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    @click="activeTab = 'overview'">
+                    Overview
+                </button>
+                <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
+                    :class="activeTab === 'planning' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    @click="activeTab = 'planning'">
+                    Planning & Design
+                </button>
+                <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
+                    :class="activeTab === 'cloud' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    @click="activeTab = 'cloud'">
+                    Cloud Architecture
+                </button>
+                <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
+                    :class="activeTab === 'cicd' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    @click="activeTab = 'cicd'">
+                    CI/CD & Infrastructure
+                </button>
+                <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
+                    :class="activeTab === 'backend' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    @click="activeTab = 'backend'">
+                    Backend Development
+                </button>
+                <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
+                    :class="activeTab === 'monitoring' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    @click="activeTab = 'monitoring'">
+                    Monitoring & Observability
+                </button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="text-gray-800">
+                <div x-show="activeTab === 'overview'" class="tab-content">
+                    <p class="text-lg leading-relaxed mb-4 text-gray-800">
+                        Farmers in rural regions often struggle with limited access to quality agricultural supplies,
+                        long travel times, and unreliable local availability. This project was built to change that.
+                        It is a smart, serverless, AI-powered platform that transforms the way farmers discover,
+                        purchase, and learn about essential farming products. Instead of navigating traditional
+                        offline challenges, farmers can now browse trusted fertilizers and pesticides online,
+                        receive personalized AI recommendations based on crop needs, and track their orders in real
+                        time—all from one intuitive platform.
+                    </p>
+
+                    <p class="text-lg leading-relaxed mb-4 text-gray-800">
+                        Behind the scenes, the system runs on a fully serverless AWS architecture, using API Gateway,
+                        Lambda, Step Functions, RDS, S3, and Cognito to deliver lightning-fast performance, automated
+                        workflows, and real-time notifications. From intelligent product discovery to “Cash on delivery"
+                        reliability, the platform blends technology, convenience, and agricultural insights to empower
+                        farmers, support local businesses, and bring modern digital solutions to underserved
+                        communities.
+                        It’s more than an e-commerce tool—it's an end-to-end ecosystem designed to uplift rural
+                        agriculture
+                        through innovation.
+                    </p>
+                    <h3 class="text-2xl font-bold mt-4 mb-2 text-indigo-600"> Tools & technology Overview:</h3>
+                    <div class="gap-6 text-lg">
+                        <div>
+                            <ul class="list-disc list-inside text-gray-700">
+                                <li><strong>Backend Languages & Frameworks:</strong> Python (FastAPI, SQLAlchemy,
+                                    Pydantic, Boto3)</li>
+                                <li><strong>Cloud Platform (AWS):</strong> API Gateway, API Websocket Gateway, Step
+                                    Function, Lambda, RDS (MySQL), S3,
+                                    CloudWatch, IAM, Cognito</li>
+                                <li><strong>Databases:</strong> MySQL</li>
+                                <li><strong>DevOps & IaC:</strong> Git, GitHub Actions, Terraform</li>
+                                <li><strong>Collaboration & PM Tools:</strong> Figma, JIRA, Postman</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div x-show="activeTab === 'planning'" class="tab-content">
+                    <p class="text-lg leading-relaxed mb-4">
+                        In the planning and design phase, we focused on establishing a clear technical foundation
+                        through detailed SRS documentation, AWS architecture diagrams, and UI/UX collaboration. This
+                        preparation ensured smooth coordination between teams and well-defined backend–frontend
+                        integration.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li><strong>Figma Collaboration:</strong> Reviewed UI/UX wireframes and mockups to align API
+                            design with user interface requirements.</li>
+                        <li><strong>JIRA Task Management:</strong> Supports agile project management, including task
+                            breakdown, sprint planning, progress tracking, and issue resolution.</li>
+                        <li><strong>Architecture Planning:</strong> Developed high-level system architecture diagrams,
+                            Entity-Relationship Diagrams (ERDs), and data flow diagrams.</li>
+                        <li><strong>API Specification:</strong> Defined detailed API endpoints and data models (e.g.,
+                            using OpenAPI/Swagger principles) to ensure clear contracts.</li>
+                        <li><strong>Initial Scope Definition:</strong> Collaborated on defining project scope and
+                            breaking down features into manageable sprints.</li>
+                    </ul>
+
+                    <!-- Diagrams & Documentation Grid - Gray Background -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 bg-gray-200 p-4 rounded-lg">
+                        <!-- Changed here -->
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Diagrams & Planning:</h4>
+                            <img src="image/swagger_1.png" data-original-src="image/swagger_1.png" alt="Swagger Image"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/jira_1.png" data-original-src="image/jira_1.png" alt="JIRA Image"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+                            <img src="image/flow_1.png" data-original-src="image/flow_1.png"
+                                data-original-src="image/Sequence_diagram_Details.png" alt="Sequence Diagram Details"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">UI/UX & Documentation:</h4>
+                            <img src="image/figma_1.png" data-original-src="image/figma_1.png"
+                                alt="Figma UI/UX Design 1"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+                            <img src="image/figma_2.png" data-original-src="image/figma_2.png"
+                                alt="Figma UI/UX Design 2"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-wrap gap-4">
+                        <a href="Document/SRS V1.pdf" target="_blank"
+                            class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300 shadow-md">
+                            View SRS Document
+                        </a>
+                        <a href="Document/Swagger.yaml" target="_blank"
+                            class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300 shadow-md">
+                            View Swagger Example
+                        </a>
+                    </div>
+                </div>
+
+                <div x-show="activeTab === 'cloud'" class="tab-content">
+                    <p class="text-lg leading-relaxed mb-4">
+                        The backend follows a serverless, microservices-based architecture on AWS to ensure
+                        high scalability, low cost, and secure operations. All client requests flow through
+                        API Gateway, which connects to modular Lambda services responsible for different parts
+                        of the system.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>
+                            <strong>AWS API Gateway:</strong>
+                            Manages all API endpoints, request routing, authentication,
+                            and separate APIs for each microservice
+                        </li>
+
+                        <li>
+                            <strong>AWS Lambda:</strong>
+                            Executes all backend business logic in a fully serverless environments - product
+                            management, order processing, payment updates.
+                        </li>
+
+                        <li><strong>AWS API Gateway (WebSocket):</strong>
+                            Enables real-time, bidirectional communication for instant
+                            order status and payment updates to the frontend.</li>
+
+                        <li>
+                            <strong>AWS Step Functions:</strong>
+                            Orchestrates multi-step workflows like order creation, apply promotions and
+                            payment flow.
+                        </li>
+
+                        <li>
+                            <strong>AWS Cognito:</strong>
+                            Provides secure authentication, user management, and token-based access for APIs without
+                            managing servers manually.
+                        </li>
+
+                        <li>
+                            <strong>AWS RDS (MySQL):</strong>
+                            Stores structured and transactional data such as products, orders, users, and payments
+                            in a fully managed relational database.
+                        </li>
+
+                        <li>
+                            <strong>AWS S3:</strong>
+                            Stores product images, invoices, and static files with secure access control.
+                        </li>
+
+                        <li>
+                            <strong>AWS IAM:</strong>
+                            Enforces fine-grained permissions across
+                            AWS services to ensure secure internal communication.
+                        </li>
+
+                        <li>
+                            <strong>AWS CloudWatch:</strong>
+                            Provides centralized logging, error alerts, metrics, and performance monitoring for
+                            all Lambda functions and workflows.
+                        </li>
+                    </ul>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 bg-gray-200 p-4 rounded-lg mt-4">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">AWS Services:</h4>
+                            <img src="image/cloud_1.png" data-original-src="image/cloud_1.png" alt="Cloud Image"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/cloud_2.png" data-original-src="image/cloud_2.png"
+                                alt="CloudWatch Logs Events"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+                            <img src="image/cloud_6.png" data-original-src="image/cloud_6.png"
+                                alt="CloudWatch Logs Events"
+                                class="w-full h-auto rounded-lg mb-4 shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+
+                        </div>
+                        <div>
+                            <!-- <h4 class="text-xl font-semibold mb-2">CloudWatch Dashboard & Insights:</h4> -->
+                            <img src="image/cloud_3.png" data-original-src="image/cloud_3.png"
+                                alt="CloudWatch Logs Insights"
+                                class="w-full h-auto rounded-lg mb-4 mt-10 shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/cloud_4.png" data-original-src="image/cloud_4.png"
+                                alt="CloudWatch Logs Insights"
+                                class="w-full h-auto rounded-lg mb-4 shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/cloud_5.png" data-original-src="image/cloud_5.png"
+                                alt="CloudWatch Logs Events"
+                                class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div x-show="activeTab === 'cicd'" class="tab-content">
+                    <p class="text-lg leading-relaxed mb-4">
+                        Automated deployment strategies ensure rapid and reliable delivery of new features and updates.
+                        I've
+                        implemented a Continuous Integration/Continuous Deployment (CI/CD) pipeline using GitHub Actions
+                        and
+                        managed infrastructure with Terraform.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li><strong>GitHub Actions:</strong> Orchestrates the CI/CD pipeline, automating build, test,
+                            and
+                            deployment processes.</li>
+                        <li><strong>CI/CD Pipeline:</strong> Ensures code quality through automated testing and enables
+                            quick,
+                            consistent deployments to AWS environments.</li>
+                        <li><strong>Terraform:</strong> Used for Infrastructure as Code (IaC) to provision and manage
+                            AWS
+                            resources, ensuring reproducibility and version control.</li>
+                        <li><strong>Benefits:</strong> Reduced manual errors, faster release cycles, consistent
+                            environment
+                            provisioning.</li>
+                    </ul>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 bg-gray-200 p-4 rounded-lg">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">GitHub Actions Workflows:</h4>
+                            <img src="image/cicd_1.png" data-original-src="image/cicd_1.png" alt="cicd Image"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/cicd_4.png" data-original-src="image/cicd_4.png"
+                                alt="CloudWatch Logs Events"
+                                class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Terraform Configuration:</h4>
+                            <img src="image/cicd_3.png" data-original-src="image/cicd_3.png"
+                                alt="CloudWatch Logs Insights"
+                                class="w-full h-auto rounded-lg mb-4 shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/cicd_2.png" data-original-src="image/cicd_2.png"
+                                alt="CloudWatch Logs Insights"
+                                class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                        </div>
+                    </div>
+                </div>
+
+                <div x-show="activeTab === 'backend'" class="tab-content">
+                    <p class="text-lg leading-relaxed mb-4">
+                        The backend is built using Python and modern development practices to ensure high performance,
+                        scalability, and maintainable code. FastAPI powers the REST APIs, while SQLAlchemy provides
+                        efficient
+                        ORM capabilities for MySQL. The architecture emphasizes clean coding, modular design, and
+                        asynchronous
+                        processing to support a production-ready environment.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li><strong>Python:</strong> Core development language for all backend services.</li>
+                        <li><strong>FastAPI:</strong> Framework for building high-performance, asynchronous REST APIs
+                            with automatic validation using Pydantic.</li>
+                        <li><strong>SQLAlchemy:</strong> ORM layer enabling structured, efficient, and secure
+                            interactions with AWS RDS (MySQL).</li>
+                        <li><strong>Object-Oriented Programming (OOPS):</strong> Ensures reusable, scalable, and clear
+                            code organization across services.</li>
+                        <li><strong>Unit Testing (pytest):</strong> Implemented for validation of service logic, API
+                            responses, and database operations.</li>
+                        <li><strong>Async/Await:</strong> Enables non-blocking I/O, improving throughput and API
+                            responsiveness. </li>
+                        <li><strong>Boto3 Integration:</strong> Used for interacting with AWS services such as S3,
+                            Cognito, and Step Functions.</li>
+                        <li><strong>Environment-based Configurations:</strong> Managed using separate dev/stage/prod
+                            configurations to support deployment pipelines.</li>
+                    </ul>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 bg-gray-200 p-4 rounded-lg">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Code Snippets:</h4>
+                            <img src="image/backend_1.png" data-original-src="image/backend_1.png" alt="backend Image"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/backend_2.png" data-original-src="image/backend_2.png"
+                                alt="CloudWatch Logs Events"
+                                class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+                        </div>
+                        <div>
+                            <img src="image/backend_3.png" data-original-src="image/backend_3.png"
+                                alt="CloudWatch Logs Insights"
+                                class="w-full h-auto rounded-lg mb-4 mt-10 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/backend_4.png" data-original-src="image/backend_4.png"
+                                alt="CloudWatch Logs Insights"
+                                class="w-full h-auto rounded-lg mb-4 shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div x-show="activeTab === 'monitoring'" class="tab-content">
+                    <p class="text-lg leading-relaxed mb-4">
+                        Robust monitoring and observability practices ensure the backend remains reliable,
+                        performant, and easy to troubleshoot. AWS CloudWatch is integrated across all backend
+                        services to capture logs, track system health, and alert the team about potential issues
+                        before it impact users.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li><strong>CloudWatch Logs:</strong>
+                            Centralized logging for all Lambda functions, FastAPI services, and database interactions,
+                            enabling efficient debugging and traceability.</li>
+                        <li><strong>Custom Metrics:</strong>
+                            Application-specific KPIs (e.g., order flow duration, payment success rates, API latency)
+                            are published to CloudWatch for deeper operational insights.</li>
+                        <li><strong>Alarms and Notifications:</strong>
+                            CloudWatch Alarms are configured to detect anomalies—such as increased error rates or slow
+                            Lambda execution—and send alerts via Amazon SNS.
+                        </li>
+                        <li><strong>CloudWatch Dashboards:</strong> Real-time dashboards visualize API performance,
+                            Lambda invocation patterns, database usage, and system health in a single unified view.</li>
+                        <li><strong>Structured Logging:</strong> JSON-formatted logs used for easier searching,
+                            filtering, and correlation during issue investigation.</li>
+                    </ul>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 bg-gray-200 p-4 rounded-lg">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">CloudWatch Logs:</h4>
+                            <img src="image/monitoring_3.png" data-original-src="image/monitoring_3.png"
+                                alt="CloudWatch Logs"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/monitoring_1.png" data-original-src="image/monitoring_1.png"
+                                alt="CloudWatch Logs Events"
+                                class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">CloudWatch Dashboard & Insights:</h4>
+                            <img src="image/monitoring_5.png" data-original-src="image/monitoring_5.png"
+                                alt="CloudWatch Logs Insights"
+                                class="w-full h-auto rounded-lg mb-4 shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/monitoring_4.png" data-original-src="image/monitoring_4.png"
+                                alt="CloudWatch Logs Insights"
+                                class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                        </div>
+                    </div>
+                </div>
+
+                <div x-show="activeTab === 'tools'" class="tab-content">
+                    <p class="text-lg leading-relaxed mb-4">
+                        Beyond backend development, I use a wide range of industry-standard tools and follow agile
+                        methodologies to ensure smooth collaboration, efficient workflows, and high-quality project
+                        documentation throughout the development lifecycle.
+                    </p>
+
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
+                        <li><strong>Postman:</strong> Used for API testing, debugging, and maintaining shared API
+                            collections during backend development.</li>
+                        <li><strong>JIRA:</strong> Supports agile project management, including task breakdown, sprint
+                            planning, progress tracking, and issue resolution.</li>
+                        <li><strong>Confluence:</strong> Centralized workspace for documenting architectural decisions,
+                            API specifications, workflow diagrams, and meeting notes.</li>
+                        <li><strong>Git & GitHub:</strong> Version control for managing branches, code reviews, and CI
+                            workflows in a collaborative environment.</li>
+                        <li><strong>Agile/Scrum Practices:</strong> Followed iterative development cycles, participated
+                            in daily standups, sprint reviews, and retrospectives to ensure continuous delivery and team
+                            alignment.</li>
+                    </ul>
+                </div>
+
+                <div x-show="activeTab === 'contribution'" class="tab-content">
+                    <p class="text-lg leading-relaxed mb-4 text-gray-800">
+                        I led the development of the Payment Service, tightly integrated with the platform’s multi-step
+                        order workflow.
+                        The system ensures seamless order placement, intelligent payment-provider selection, secure
+                        payment processing,
+                        and real-time updates for users.
+                    </p>
+
+                    <!-- Step Function Workflow -->
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-600">Step Function Workflow</h3>
+                    <p class="text-lg leading-relaxed mb-3 text-gray-800">
+                        The checkout process is orchestrated with <strong>AWS Step Functions</strong> and consists of
+                        three main stages:
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+                        <li><strong>Order Creation</strong> — Validates cart details and creates order records in RDS.
+                        </li>
+                        <li><strong>Promotion Application</strong> — Applies discount rules and updates order totals.
+                        </li>
+                        <li><strong>Payment Processing (My Focus)</strong> — Selects the best payment provider,
+                            processes payments via Razorpay, and handles success/failure flows.</li>
+                    </ul>
+
+                    <!-- Payment Processing & Integration -->
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-600">Payment Processing &amp; Integration</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+                        <li>Integrated <strong>Razorpay SDK</strong> for payment creation, signature verification, and
+                            webhook-driven updates.</li>
+                        <li>Implemented <strong>API Gateway (REST &amp; WebSocket)</strong> to deliver real-time payment
+                            status updates to the frontend.</li>
+                        <li>Developed Lambdas in <strong>VPC</strong> for secure RDS access and <strong>Non-VPC</strong>
+                            Lambdas for low-latency external API interactions.</li>
+                        <li>Designed idempotent, fault-tolerant payment logic with retries, exponential backoff, and
+                            structured error handling.</li>
+                    </ul>
+
+                    <!-- Authentication & Security -->
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-600">Authentication &amp; Security</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+                        <li>Used <strong>AWS Cognito</strong> for user authentication, user pools, and token-based API
+                            access.</li>
+                        <li>Configured secure <strong>AWS IAM</strong> roles and least-privilege policies for Lambdas,
+                            Step Functions, and API Gateway.</li>
+                    </ul>
+
+                    <!-- Observability & Monitoring -->
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-600">Observability &amp; Monitoring</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+                        <li>Integrated <strong>CloudWatch Logs</strong> and metrics to capture Lambda and Step Function
+                            executions for end-to-end visibility.</li>
+                        <li>Configured alarms and notifications for payment failures, workflow errors, and high-latency
+                            operations.</li>
+                    </ul>
+
+                    <!-- Infrastructure & Deployment -->
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-600">Infrastructure &amp; Deployment</h3>
+                    <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2">
+                        <li>Provisioned Step Functions, Lambda, API Gateway, RDS, and S3 using
+                            <strong>Terraform</strong>.
+                        </li>
+                        <li>Implemented CI/CD pipelines with <strong>GitHub Actions</strong> to automate tests and
+                            deployments across environments.</li>
+                    </ul>
+
+                    <!-- Impact & Outcomes -->
+                    <h3 class="text-2xl font-bold mb-3 text-indigo-600">Impact &amp; Outcomes</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Enabled reliable, real-time payment processing across the platform.</li>
+                        <li>Reduced payment failures, improved order reliability, and enhanced customer experience.</li>
+                        <li>Delivered a scalable, secure, and maintainable payment architecture ready to onboard
+                            additional providers.</li>
+                    </ul>
+        </section>
+        </div>
+        </div>
+        </section>
+
+        <section id="experience" class="bg-white p-6 md:p-10 rounded-lg shadow-md mb-8 md:mb-12 scroll-mt-24">
+            <h2 class="text-3xl font-semibold mb-6 section-heading text-blue-700">Experience</h2>
+            <div class="role">
+                <div class="experience-header">
+                    <h3><strong>Backend Developer | AI-Powered AgriTech Platform (Volunteer – India)</strong></h3>
+                    <p class="duration"><strong>Jun 2025 – Current</strong></p>
+                </div>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>
+                        Designed the complete backend architecture for a B2C agriculture-focused SaaS platform using a
+                        <strong>serverless-first approach on AWS</strong>, prioritizing scalability, fault tolerance,
+                        and cost optimization.
+                    </li>
+                    <li>
+                        Implemented <strong>RESTful APIs</strong> using <strong>Python, FastAPI, and Pydantic</strong>,
+                        enabling secure user
+                        registration, authentication, product browsing, cart management, and order processing.
+                    </li>
+                    <li>
+                        Integrated <strong>AWS Cognito</strong> for secure user authentication and authorization,
+                        supporting
+                        <strong>role-based access</strong> for admins and end users.
+                    </li>
+                    <li>
+                        Built a payment processing workflow using <strong>AWS Lambda, API Gateway, WebSocket API
+                            Gateway,
+                            and Step Functions</strong>, handling payment success, failure, retries, and notifications.
+                    </li>
+                    <li>
+                        Designed and managed relational data models using <strong>AWS RDS (MySQL)</strong>; utilized
+                        <strong>MySQL Workbench</strong> for schema design, query optimization, and data validation.
+                    </li>
+                    <li>
+                        Stored and served product images and media assets via <strong>AWS S3</strong>, ensuring scalable
+                        and
+                        cost-efficient storage.
+                    </li>
+                    <li>
+                        Configured <strong>IAM roles and policies</strong> to enforce least-privilege access across
+                        <strong>Lambda, API Gateway, RDS, and S3</strong> services.
+                    </li>
+                    <li>
+                        Implemented <strong>Lambda functions inside and outside VPCs</strong>, understanding networking
+                        trade-offs
+                        for accessing private databases versus public services.
+                    </li>
+                    <li>
+                        Automated infrastructure provisioning using <strong>Terraform</strong>, enabling consistent
+                        environment
+                        setup across development and testing stages.
+                    </li>
+                    <li>
+                        Built <strong>CI/CD pipelines</strong> using <strong>GitHub Actions</strong>, automating
+                        deployments,
+                        validation checks, and environment updates.
+                    </li>
+                    <li>
+                        Implemented <strong>API testing and validation</strong> using <strong>Postman</strong>,
+                        verifying
+                        request/response flows and payment edge cases.
+                    </li>
+                    <li>
+                        Monitored and debugged application behavior using <strong>AWS CloudWatch</strong> logs and
+                        metrics,
+                        resolving API failures, timeout issues, and Step Function execution errors.
+                    </li>
+                    <li>
+                        Applied <strong>clean code principles</strong>, async programming, structured exception
+                        handling,
+                        and proper HTTP status codes to maintain production-grade API quality.
+                    </li>
+                    <li>
+                        Prepared comprehensive <strong>technical documentation</strong>, including SRS, architecture
+                        diagrams,
+                        sequence diagrams, and database schemas, supporting collaboration with non-technical
+                        stakeholders.
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="mt-8">
+                <div class="experience-header">
+                    <h3><strong>Mobile App Developer | Instance IT Solutions – India</strong></h3>
+                    <p class="duration"><strong>Jan 2021 – Dec 2022</strong></p>
+                </div>
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>
+                        Developed and maintained B2B/B2C e-commerce, trading, and large-scale ticketing apps using
+                        <strong>Java/Kotlin, MVVM, Retrofit, and Room</strong>, delivering scalable and high-performing
+                        Android experiences.
+                    </li>
+                    <li>
+                        Integrated mobile apps with backend systems built on <strong>AWS (Lambda, API Gateway, RDS, S3,
+                            Cognito)</strong>,
+                        enabling secure authentication, real-time operations, and seamless data exchange.
+                    </li>
+                    <li>
+                        Consumed <strong>AWS Lambda + API Gateway WebSocket</strong> services for live trading updates,
+                        reducing order latency
+                        by 35% and ensuring low-latency streaming during high-volume transactions.
+                    </li>
+                    <li>
+                        Leveraged <strong>AWS S3</strong> for efficient image, catalog, and ticket storage, improving
+                        load times and reducing
+                        device storage footprint.
+                    </li>
+                    <li>
+                        Implemented <strong>FCM-based push notifications</strong>, biometric authentication (Face
+                        ID/Fingerprint), and
+                        secure checkout/payment flows across multiple apps.
+                    </li>
+                    <li>
+                        Collaborated with cloud engineers by reviewing <strong>API Gateway contracts, Lambda payload
+                            structures, and
+                            RDS-backed data models</strong>, ensuring strong understanding of cloud-driven architecture.
+                    </li>
+                    <li>
+                        Monitored production performance using <strong>Firebase Performance Monitoring</strong> and
+                        <strong>AWS CloudWatch</strong> dashboards, achieving 99%+ uptime across live applications.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-white p-6 md:p-10 rounded-lg shadow-md scroll-mt-24">
+            <h2 class="text-3xl font-semibold mb-6 section-heading text-blue-700">Get In Touch</h2>
+            <p class="text-lg leading-relaxed mb-4">
+                I'm always open to discussing new projects, collaborations, or job opportunities. Feel free to reach
+                out!
+            </p>
+            <ul class="text-lg space-y-2">
+                <li><strong>Email:</strong> <a href="mailto:mdhruvim@gmail.com"
+                        class="text-blue-500 hover:underline">mdhruvim@gmail.com</a></li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- The Modal (Image Gallery) -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Image Modal Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("img01");
+            var closeBtn = document.getElementsByClassName("close-modal")[0];
+
+            // Get all gallery images
+            var galleryImages = document.querySelectorAll('.image-gallery-item');
+
+            // Add click event to each image
+            galleryImages.forEach(function (img) {
+                img.onclick = function () {
+                    modal.style.display = "flex";
+                    modalImg.src = this.getAttribute('data-original-src') || this.src;
+                }
+            });
+
+            // Close modal when clicking X
+            closeBtn.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // Close modal when clicking outside image
+            modal.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+            // Close modal with ESC key
+            document.addEventListener('keydown', function (event) {
+                if (event.key === "Escape" && modal.style.display === "flex") {
+                    modal.style.display = "none";
+                }
+            });
+
+            // Function to open documents in a new tab
+
+        });
+        function openDocument(docUrl) {
+            window.open(docUrl, '_blank');
+        }
+
+    </script>
+</body>
+
+</html>
