@@ -12,7 +12,7 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f3f4f6;
-            color: #374151;
+            color: #315a9a;
         }
 
         .section-heading {
@@ -94,17 +94,15 @@
 <body class="antialiased">
     <!-- Header/Navigation Bar -->
     <header
-        class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white shadow-lg py-4 px-6 md:px-12 sticky top-0 z-50 rounded-b-lg">
+        class="bg-gradient-to-r from-green-600 to-green-900 text-white shadow-lg py-4 px-6 md:px-12 sticky top-0 z-50 rounded-b-lg">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <h1 class="text-3xl font-bold mb-2 md:mb-0">Dhruvi Mandaviya</h1>
             <nav>
                 <ul class="flex space-x-4 md:space-x-8 text-lg">
-                    <li><a href="#about-me" class="hover:text-blue-200 transition-colors duration-300">About Me</a></li>
-                    <li><a href="#project-tabs" class="hover:text-blue-200 transition-colors duration-300">Project</a>
-                    </li>
-                    <li><a href="#experience" class="hover:text-blue-200 transition-colors duration-300">Experience</a>
-                    </li>
-                    <li><a href="#contact" class="hover:text-blue-200 transition-colors duration-300">Contact</a></li>
+                    <li><a href="#about-me" class="hover:text-green-200 transition-colors duration-300">About Me</a></li>
+                    <li><a href="#project-tabs" class="hover:text-green-200 transition-colors duration-300">Project</a></li>
+                    <!-- <li><a hr11ef="#experience" class="hover:text-green-200 transition-colors duration-300">Experience</a></li> -->
+                    <li><a href="#contact" class="hover:text-green-200 transition-colors duration-300">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -117,7 +115,7 @@
     <main class="container mx-auto px-4 py-8 md:py-12">
         <!-- About Me -->
         <section id="about-me" class="bg-white p-6 md:p-10 rounded-lg shadow-md mb-8 md:mb-12 scroll-mt-24">
-            <h2 class="text-3xl font-semibold mb-6 section-heading text-blue-700">About Me</h2>
+            <h2 class="text-3xl font-semibold mb-6 section-heading text-green-700">About Me</h2>
 
             <p class="text-lg leading-relaxed mb-4 text-gray-800">
                 I am an AWS Serverless Developer specializing in building scalable, event-driven backend systems using
@@ -149,37 +147,37 @@
         <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
         <section id="project-tabs" class="bg-white p-6 md:p-10 rounded-lg shadow-md mb-8 md:mb-12 scroll-mt-24"
             x-data="{ activeTab: 'overview' }">
-            <h2 class="text-3xl font-semibold mb-6 section-heading text-blue-700">Project - Agri-Tech E-Commerce
+            <h2 class="text-3xl font-semibold mb-6 section-heading text-green-700">Project - Agri-Tech E-Commerce
                 Platform</h2>
             <!-- Tabs -->
             <div class="flex overflow-x-auto border-b border-gray-200 mb-6">
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'overview' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    :class="activeTab === 'overview' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
                     @click="activeTab = 'overview'">
                     Overview
                 </button>
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'planning' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    :class="activeTab === 'planning' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
                     @click="activeTab = 'planning'">
                     Planning & Design
                 </button>
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'cloud' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    :class="activeTab === 'cloud' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
                     @click="activeTab = 'cloud'">
                     Cloud Architecture
                 </button>
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'cicd' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    :class="activeTab === 'cicd' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
                     @click="activeTab = 'cicd'">
                     CI/CD & Infrastructure
                 </button>
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'backend' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    :class="activeTab === 'backend' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
                     @click="activeTab = 'backend'">
                     Backend Development
                 </button>
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'monitoring' ? 'border-b-2 border-blue-600 text-blue-600 font-semibold' : 'text-gray-600 hover:text-blue-600'"
+                    :class="activeTab === 'monitoring' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
                     @click="activeTab = 'monitoring'">
                     Monitoring & Observability
                 </button>
@@ -209,7 +207,7 @@
                         agriculture
                         through innovation.
                     </p>
-                    <h3 class="text-2xl font-bold mt-4 mb-2 text-indigo-600"> Tools & technology Overview:</h3>
+                    <h3 class="text-2xl font-bold mt-4 mb-2 text-green-600"> Tools & technology Overview:</h3>
                     <div class="gap-6 text-lg">
                         <div>
                             <ul class="list-disc list-inside text-gray-700">
@@ -222,6 +220,30 @@
                                 <li><strong>DevOps & IaC:</strong> Git, GitHub Actions, Terraform</li>
                                 <li><strong>Collaboration & PM Tools:</strong> Figma, JIRA, Postman</li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 mt-6 bg-gray-200 p-4 rounded-lg">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Live Application Screenshots</h4>
+                            <img src="image/home_1.png" data-original-src="image/home_1.png"
+                                alt="CloudWatch Logs"
+                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/home_2.png" data-original-src="image/home_2.png"
+                                alt="CloudWatch Logs Events"
+                                class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+                        </div>
+                        <div>
+                            <img src="image/home_3.png" data-original-src="image/home_3.png"
+                                alt="CloudWatch Logs Insights"
+                                class="w-full h-auto rounded-lg mb-4 mt-10 shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            <img src="image/home_4.png" data-original-src="image/home_4.png"
+                                alt="CloudWatch Logs Insights"
+                                class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
+                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
                         </div>
                     </div>
                 </div>
@@ -418,7 +440,7 @@
                                 onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
                         </div>
                         <div>
-                            <h4 class="text-xl font-semibold mb-2">Terraform Configuration:</h4>
+                            <h4 class="text-xl font-semibold mb-2 ">Terraform Configuration:</h4>
                             <img src="image/cicd_3.png" data-original-src="image/cicd_3.png"
                                 alt="CloudWatch Logs Insights"
                                 class="w-full h-auto rounded-lg mb-4 shadow-md object-cover cursor-pointer image-gallery-item"
@@ -631,10 +653,10 @@
         </div>
         </section>
 
-        <section id="experience" class="bg-white p-6 md:p-10 rounded-lg shadow-md mb-8 md:mb-12 scroll-mt-24">
-            <h2 class="text-3xl font-semibold mb-6 section-heading text-blue-700">Experience</h2>
+        <!-- <section id="experience" class="bg-white p-6 md:p-10 rounded-lg shadow-md mb-8 md:mb-12 scroll-mt-24 ">
+            <h2 class="text-3xl font-semibold section-heading text-green-700">Experience</h2>
             <div class="role">
-                <div class="experience-header">
+                <div class="experience-header text-green-700 text-2xl">
                     <h3><strong>Backend Developer | AI-Powered AgriTech Platform (Volunteer – India)</strong></h3>
                     <p class="duration"><strong>Jun 2025 – Current</strong></p>
                 </div>
@@ -712,8 +734,8 @@
                 </ul>
             </div>
 
-            <div class="mt-8">
-                <div class="experience-header">
+            <div >
+                <div class="experience-header text-2xl text-green-700">
                     <h3><strong>Mobile App Developer | Instance IT Solutions – India</strong></h3>
                     <p class="duration"><strong>Jan 2021 – Dec 2022</strong></p>
                 </div>
@@ -754,20 +776,20 @@
                     </li>
                 </ul>
             </div>
-        </section>
+        </section> -->
 
 
 
         <!-- Contact Section -->
         <section id="contact" class="bg-white p-6 md:p-10 rounded-lg shadow-md scroll-mt-24">
-            <h2 class="text-3xl font-semibold mb-6 section-heading text-blue-700">Get In Touch</h2>
-            <p class="text-lg leading-relaxed mb-4">
+            <h2 class="text-3xl font-semibold mb-6 section-heading text-green-700">Get In Touch</h2>
+            <p class="text-lg leading-relaxed mb-4 text-gray-600">
                 I'm always open to discussing new projects, collaborations, or job opportunities. Feel free to reach
                 out!
             </p>
-            <ul class="text-lg space-y-2">
+            <ul class="text-lg space-y-2 text-gray-600">
                 <li><strong>Email:</strong> <a href="mailto:mdhruvim@gmail.com"
-                        class="text-blue-500 hover:underline">mdhruvim@gmail.com</a></li>
+                        class="hover:underline text-green-700">mdhruvim@gmail.com</a></li>
             </ul>
         </section>
 
