@@ -99,9 +99,10 @@
             <h1 class="text-3xl font-bold mb-2 md:mb-0">Dhruvi Mandaviya</h1>
             <nav>
                 <ul class="flex space-x-4 md:space-x-8 text-lg">
-                    <li><a href="#about-me" class="hover:text-green-200 transition-colors duration-300">About Me</a></li>
-                    <li><a href="#project-tabs" class="hover:text-green-200 transition-colors duration-300">Project</a></li>
-                    <!-- <li><a hr11ef="#experience" class="hover:text-green-200 transition-colors duration-300">Experience</a></li> -->
+                    <li><a href="#about-me" class="hover:text-green-200 transition-colors duration-300">About Me</a>
+                    </li>
+                    <li><a href="#project-overview" class="hover:text-green-200 transition-colors duration-300">Project</a>
+                    </li>
                     <li><a href="#contact" class="hover:text-green-200 transition-colors duration-300">Contact</a></li>
                 </ul>
             </nav>
@@ -140,115 +141,119 @@
             </p>
         </section>
 
-
-
         <!-- Project -->
         <!-- Project Tabs -->
         <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-        <section id="project-tabs" class="bg-white p-6 md:p-10 rounded-lg shadow-md mb-8 md:mb-12 scroll-mt-24"
-            x-data="{ activeTab: 'overview' }">
+        <section id="project-overview" class="bg-white p-6 md:p-10 rounded-lg shadow-md mb-8 md:mb-12 scroll-mt-24"
+            x-data="{ activeTab: 'project-overview' }">
             <h2 class="text-3xl font-semibold mb-6 section-heading text-green-700">Project - Agri-Tech E-Commerce
                 Platform</h2>
             <!-- Tabs -->
             <div class="flex overflow-x-auto border-b border-gray-200 mb-6">
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'overview' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
-                    @click="activeTab = 'overview'">
+                    :class="activeTab === 'project-overview' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
+                    @click="activeTab = 'project-overview'; window.location.hash = 'project-overview'">
                     Overview
                 </button>
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'planning' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
-                    @click="activeTab = 'planning'">
+                    :class="activeTab === 'project-planning' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
+                    @click="activeTab = 'project-planning'; window.location.hash = 'project-planning'">
                     Planning & Design
                 </button>
+
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'cloud' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
-                    @click="activeTab = 'cloud'">
+                    :class="activeTab === 'project-cloud' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
+                    @click="activeTab = 'project-cloud'; window.location.hash = 'project-cloud'">
                     Cloud Architecture
                 </button>
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'cicd' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
-                    @click="activeTab = 'cicd'">
+                    :class="activeTab === 'project-cicd' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
+                    @click="activeTab = 'project-cicd'; window.location.hash = 'project-cicd'">
                     CI/CD & Infrastructure
                 </button>
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'backend' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
-                    @click="activeTab = 'backend'">
+                    :class="activeTab === 'project-backend' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
+                    @click="activeTab = 'project-backend'; window.location.hash = 'project-backend'">
                     Backend Development
                 </button>
                 <button class="px-4 py-4 whitespace-nowrap focus:outline-none"
-                    :class="activeTab === 'monitoring' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
-                    @click="activeTab = 'monitoring'">
+                    :class="activeTab === 'project-monitoring' ? 'border-b-2 border-green-600 text-green-600 font-semibold' : 'text-gray-600 hover:text-green-600'"
+                    @click="activeTab = 'project-monitoring'; window.location.hash = 'project-monitoring'">
                     Monitoring & Observability
                 </button>
             </div>
 
             <!-- Tab Content -->
             <div class="text-gray-800">
-                <div x-show="activeTab === 'overview'" class="tab-content">
-                    <p class="text-lg leading-relaxed mb-4 text-gray-800">
-                        Farmers in rural regions often struggle with limited access to quality agricultural supplies,
-                        long travel times, and unreliable local availability. This project was built to change that.
-                        It is a smart, serverless, AI-powered platform that transforms the way farmers discover,
-                        purchase, and learn about essential farming products. Instead of navigating traditional
-                        offline challenges, farmers can now browse trusted fertilizers and pesticides online,
-                        receive personalized AI recommendations based on crop needs, and track their orders in real
-                        time—all from one intuitive platform.
-                    </p>
+                <div id="project-overview" x-show="activeTab === 'project-overview'" class="tab-content">
+                        <p class="text-lg leading-relaxed mb-4 text-gray-800">
+                            Farmers in rural regions often struggle with limited access to quality agricultural
+                            supplies,
+                            long travel times, and unreliable local availability. This project was built to change that.
+                            It is a smart, serverless, AI-powered platform that transforms the way farmers discover,
+                            purchase, and learn about essential farming products. Instead of navigating traditional
+                            offline challenges, farmers can now browse trusted fertilizers and pesticides online,
+                            receive personalized AI recommendations based on crop needs, and track their orders in real
+                            time—all from one intuitive platform.
+                        </p>
 
-                    <p class="text-lg leading-relaxed mb-4 text-gray-800">
-                        Behind the scenes, the system runs on a fully serverless AWS architecture, using API Gateway,
-                        Lambda, Step Functions, RDS, S3, and Cognito to deliver lightning-fast performance, automated
-                        workflows, and real-time notifications. From intelligent product discovery to “Cash on delivery"
-                        reliability, the platform blends technology, convenience, and agricultural insights to empower
-                        farmers, support local businesses, and bring modern digital solutions to underserved
-                        communities.
-                        It’s more than an e-commerce tool—it's an end-to-end ecosystem designed to uplift rural
-                        agriculture
-                        through innovation.
-                    </p>
-                    <h3 class="text-2xl font-bold mt-4 mb-2 text-green-600"> Tools & technology Overview:</h3>
-                    <div class="gap-6 text-lg">
-                        <div>
-                            <ul class="list-disc list-inside text-gray-700">
-                                <li><strong>Backend Languages & Frameworks:</strong> Python (FastAPI, SQLAlchemy,
-                                    Pydantic, Boto3)</li>
-                                <li><strong>Cloud Platform (AWS):</strong> API Gateway, API Websocket Gateway, Step
-                                    Function, Lambda, RDS (MySQL), S3,
-                                    CloudWatch, IAM, Cognito</li>
-                                <li><strong>Databases:</strong> MySQL</li>
-                                <li><strong>DevOps & IaC:</strong> Git, GitHub Actions, Terraform</li>
-                                <li><strong>Collaboration & PM Tools:</strong> Figma, JIRA, Postman</li>
-                            </ul>
+                        <p class="text-lg leading-relaxed mb-4 text-gray-800">
+                            Behind the scenes, the system runs on a fully serverless AWS architecture, using API
+                            Gateway,
+                            Lambda, Step Functions, RDS, S3, and Cognito to deliver lightning-fast performance,
+                            automated
+                            workflows, and real-time notifications. From intelligent product discovery to “Cash on
+                            delivery"
+                            reliability, the platform blends technology, convenience, and agricultural insights to
+                            empower
+                            farmers, support local businesses, and bring modern digital solutions to underserved
+                            communities.
+                            It’s more than an e-commerce tool—it's an end-to-end ecosystem designed to uplift rural
+                            agriculture
+                            through innovation.
+                        </p>
+                        <h3 class="text-2xl font-bold mt-4 mb-2 text-green-600"> Tools & technology Overview:</h3>
+                        <div class="gap-6 text-lg">
+                            <div>
+                                <ul class="list-disc list-inside text-gray-700">
+                                    <li><strong>Backend Languages & Frameworks:</strong> Python (FastAPI, SQLAlchemy,
+                                        Pydantic, Boto3)</li>
+                                    <li><strong>Cloud Platform (AWS):</strong> API Gateway, API Websocket Gateway, Step
+                                        Function, Lambda, RDS (MySQL), S3,
+                                        CloudWatch, IAM, Cognito</li>
+                                    <li><strong>Databases:</strong> MySQL</li>
+                                    <li><strong>DevOps & IaC:</strong> Git, GitHub Actions, Terraform</li>
+                                    <li><strong>Collaboration & PM Tools:</strong> Figma, JIRA, Postman</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 mt-6 bg-gray-200 p-4 rounded-lg">
-                        <div>
-                            <h4 class="text-xl font-semibold mb-2">Live Application Screenshots</h4>
-                            <img src="image/home_1.png" data-original-src="image/home_1.png"
-                                alt="CloudWatch Logs"
-                                class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
-                            <img src="image/home_2.png" data-original-src="image/home_2.png"
-                                alt="CloudWatch Logs Events"
-                                class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 mt-6 bg-gray-200 p-4 rounded-lg">
+                            <div>
+                                <h4 class="text-xl font-semibold mb-2">Live Application Screenshots</h4>
+                                <img src="image/home_1.png" data-original-src="image/home_1.png" alt="CloudWatch Logs"
+                                    class="w-full h-auto rounded-lg shadow-md mb-4 object-cover cursor-pointer image-gallery-item"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                                <img src="image/home_2.png" data-original-src="image/home_2.png"
+                                    alt="CloudWatch Logs Events"
+                                    class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/a78bfa/ffffff?text=Image+Not+Found'">
+                            </div>
+                            <div>
+                                <img src="image/home_3.png" data-original-src="image/home_3.png"
+                                    alt="CloudWatch Logs Insights"
+                                    class="w-full h-auto rounded-lg mb-4 mt-10 shadow-md object-cover cursor-pointer image-gallery-item"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                                <img src="image/home_4.png" data-original-src="image/home_4.png"
+                                    alt="CloudWatch Logs Insights"
+                                    class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
+                                    onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
+                            </div>
                         </div>
-                        <div>
-                            <img src="image/home_3.png" data-original-src="image/home_3.png"
-                                alt="CloudWatch Logs Insights"
-                                class="w-full h-auto rounded-lg mb-4 mt-10 shadow-md object-cover cursor-pointer image-gallery-item"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
-                            <img src="image/home_4.png" data-original-src="image/home_4.png"
-                                alt="CloudWatch Logs Insights"
-                                class="w-full h-auto rounded-lg shadow-md object-cover cursor-pointer image-gallery-item"
-                                onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Image+Not+Found'">
-                        </div>
-                    </div>
+                    
                 </div>
 
-                <div x-show="activeTab === 'planning'" class="tab-content">
+                <div  id="project-planning" x-show="activeTab === 'project-planning'" class="tab-content">
                     <p class="text-lg leading-relaxed mb-4">
                         In the planning and design phase, we focused on establishing a clear technical foundation
                         through detailed SRS documentation, AWS architecture diagrams, and UI/UX collaboration. This
@@ -310,7 +315,7 @@
                     </div>
                 </div>
 
-                <div x-show="activeTab === 'cloud'" class="tab-content">
+                <div id="project-cloud" x-show="activeTab === 'project-cloud'" class="tab-content">
                     <p class="text-lg leading-relaxed mb-4">
                         The backend follows a serverless, microservices-based architecture on AWS to ensure
                         high scalability, low cost, and secure operations. All client requests flow through
@@ -405,7 +410,7 @@
                     </div>
                 </div>
 
-                <div x-show="activeTab === 'cicd'" class="tab-content">
+                <div id="project-cicd" x-show="activeTab === 'project-cicd'" class="tab-content">
                     <p class="text-lg leading-relaxed mb-4">
                         Automated deployment strategies ensure rapid and reliable delivery of new features and updates.
                         I've
@@ -453,7 +458,7 @@
                     </div>
                 </div>
 
-                <div x-show="activeTab === 'backend'" class="tab-content">
+                <div id="project-backend" x-show="activeTab === 'project-backend'" class="tab-content">
                     <p class="text-lg leading-relaxed mb-4">
                         The backend is built using Python and modern development practices to ensure high performance,
                         scalability, and maintainable code. FastAPI powers the REST APIs, while SQLAlchemy provides
@@ -504,7 +509,7 @@
                     </div>
                 </div>
 
-                <div x-show="activeTab === 'monitoring'" class="tab-content">
+                <div id="project-monitoring" x-show="activeTab === 'project-monitoring'" class="tab-content">
                     <p class="text-lg leading-relaxed mb-4">
                         Robust monitoring and observability practices ensure the backend remains reliable,
                         performant, and easy to troubleshoot. AWS CloudWatch is integrated across all backend
@@ -575,7 +580,7 @@
                     </ul>
                 </div>
 
-                <div x-show="activeTab === 'contribution'" class="tab-content">
+                <div id="project-contribution" x-show="activeTab === 'project-contribution'" class="tab-content">
                     <p class="text-lg leading-relaxed mb-4 text-gray-800">
                         I led the development of the Payment Service, tightly integrated with the platform’s multi-step
                         order workflow.
